@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtMotivo = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.txtDNI = new System.Windows.Forms.TextBox();
@@ -39,8 +41,6 @@
             this.cmbTipoTramite = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lsbUrgencias = new System.Windows.Forms.ListBox();
-            this.txtMotivo = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.lblLlamado = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnAtender = new System.Windows.Forms.Button();
@@ -66,6 +66,22 @@
             this.groupBox1.Size = new System.Drawing.Size(562, 108);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
+            // 
+            // txtMotivo
+            // 
+            this.txtMotivo.Location = new System.Drawing.Point(310, 36);
+            this.txtMotivo.Name = "txtMotivo";
+            this.txtMotivo.Size = new System.Drawing.Size(235, 20);
+            this.txtMotivo.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(310, 17);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(39, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Motivo";
             // 
             // dtpFecha
             // 
@@ -128,6 +144,7 @@
             // 
             // cmbTipoTramite
             // 
+            this.cmbTipoTramite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoTramite.FormattingEnabled = true;
             this.cmbTipoTramite.Location = new System.Drawing.Point(9, 79);
             this.cmbTipoTramite.Name = "cmbTipoTramite";
@@ -150,22 +167,6 @@
             this.lsbUrgencias.Name = "lsbUrgencias";
             this.lsbUrgencias.Size = new System.Drawing.Size(431, 173);
             this.lsbUrgencias.TabIndex = 11;
-            // 
-            // txtMotivo
-            // 
-            this.txtMotivo.Location = new System.Drawing.Point(310, 36);
-            this.txtMotivo.Name = "txtMotivo";
-            this.txtMotivo.Size = new System.Drawing.Size(235, 20);
-            this.txtMotivo.TabIndex = 11;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(310, 17);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 13);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Motivo";
             // 
             // lblLlamado
             // 

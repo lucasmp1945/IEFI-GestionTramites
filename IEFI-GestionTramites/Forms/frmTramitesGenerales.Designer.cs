@@ -89,6 +89,7 @@
             // 
             // cmbTipoTramite
             // 
+            this.cmbTipoTramite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoTramite.FormattingEnabled = true;
             this.cmbTipoTramite.Location = new System.Drawing.Point(320, 35);
             this.cmbTipoTramite.Name = "cmbTipoTramite";
