@@ -14,11 +14,17 @@ namespace IEFI_GestionTramites.Forms
     public partial class frmTramitesGenerales : Form
     {
 
-        private ColaTramites cola = new ColaTramites();
+        private ColaTramites cola;
+        private ListaFinalizados historial;
 
-        public frmTramitesGenerales()
+
+        public frmTramitesGenerales(ColaTramites cola, ListaFinalizados historial)
         {
             InitializeComponent();
+            this.cola = cola;
+            this.historial = historial;
+
+            ActualizarLista();
         }
 
 
@@ -47,7 +53,7 @@ namespace IEFI_GestionTramites.Forms
 
 
             Tramite atendido = cola.Desencolar();
-            DatosCompartidos.Historial.AgregarOrdenado(atendido);
+            historial.AgregarOrdenado(atendido);
             lblLlamado.Text = $"{atendido.Nombre} ({atendido.DNI}) - {atendido.TipoTramite}";
             ActualizarLista();
         }
@@ -97,14 +103,5 @@ namespace IEFI_GestionTramites.Forms
             dtpFecha.Value = DateTime.Now;
         }
 
-        private void lblLlamado_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

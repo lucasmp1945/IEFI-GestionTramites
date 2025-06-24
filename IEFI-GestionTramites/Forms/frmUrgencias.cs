@@ -14,10 +14,16 @@ namespace IEFI_GestionTramites.Forms
     public partial class frmUrgencias : Form
     {
 
-        private PilaUrgencias pila = new PilaUrgencias();
-        public frmUrgencias()
+        private PilaUrgencias pila;
+        private ListaFinalizados historial;
+
+        public frmUrgencias(PilaUrgencias pila, ListaFinalizados historial)
         {
             InitializeComponent();
+            this.pila = pila;
+            this.historial = historial;
+
+            ActualizarLista();
         }
 
         private void frmUrgencias_Load(object sender, EventArgs e)
@@ -38,7 +44,7 @@ namespace IEFI_GestionTramites.Forms
             cmbTipoTramite.Items.Add("Cambio de domicilio");
             cmbTipoTramite.Items.Add("Otro");
 
-            cmbTipoTramite.SelectedIndex = 0; // Selecciona el primero por defecto
+            cmbTipoTramite.SelectedIndex = 0;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -71,7 +77,7 @@ namespace IEFI_GestionTramites.Forms
             }
 
             Tramite atendido = pila.Desapilar();
-            DatosCompartidos.Historial.AgregarOrdenado(atendido);
+            historial.AgregarOrdenado(atendido);
             lblLlamado.Text = $"{atendido.Nombre} ({atendido.DNI}) - {atendido.TipoTramite}";
             ActualizarLista();
         }

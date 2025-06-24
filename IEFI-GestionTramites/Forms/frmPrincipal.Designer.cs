@@ -32,6 +32,8 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnAbrirJornada = new System.Windows.Forms.Button();
+            this.btnCerrarJornada = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +63,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(649, 418);
+            this.tabPage2.Size = new System.Drawing.Size(595, 397);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Urgencias";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -71,16 +73,38 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(649, 418);
+            this.tabPage3.Size = new System.Drawing.Size(595, 397);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Historial";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btnAbrirJornada
+            // 
+            this.btnAbrirJornada.Location = new System.Drawing.Point(16, 450);
+            this.btnAbrirJornada.Name = "btnAbrirJornada";
+            this.btnAbrirJornada.Size = new System.Drawing.Size(122, 23);
+            this.btnAbrirJornada.TabIndex = 1;
+            this.btnAbrirJornada.Text = "Abrir Jornada";
+            this.btnAbrirJornada.UseVisualStyleBackColor = true;
+            this.btnAbrirJornada.Click += new System.EventHandler(this.btnAbrirJornada_Click);
+            // 
+            // btnCerrarJornada
+            // 
+            this.btnCerrarJornada.Location = new System.Drawing.Point(489, 450);
+            this.btnCerrarJornada.Name = "btnCerrarJornada";
+            this.btnCerrarJornada.Size = new System.Drawing.Size(122, 23);
+            this.btnCerrarJornada.TabIndex = 2;
+            this.btnCerrarJornada.Text = "Cerrar Jornada";
+            this.btnCerrarJornada.UseVisualStyleBackColor = true;
+            this.btnCerrarJornada.Click += new System.EventHandler(this.btnCerrarJornada_Click);
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(629, 451);
+            this.ClientSize = new System.Drawing.Size(629, 489);
+            this.Controls.Add(this.btnCerrarJornada);
+            this.Controls.Add(this.btnAbrirJornada);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmPrincipal";
             this.Text = "Sistema de Gestión de Trámites";
@@ -96,6 +120,8 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Button btnAbrirJornada;
+        private System.Windows.Forms.Button btnCerrarJornada;
     }
 }
 

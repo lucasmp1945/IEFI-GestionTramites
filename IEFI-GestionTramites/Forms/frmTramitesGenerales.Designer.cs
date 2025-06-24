@@ -37,12 +37,12 @@
             this.lsbTramites = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.btnAtender = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.lblLlamado = new System.Windows.Forms.Label();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,6 +129,14 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(460, 36);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(91, 20);
+            this.dtpFecha.TabIndex = 10;
+            // 
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(458, 73);
@@ -166,7 +174,6 @@
             this.label6.Size = new System.Drawing.Size(67, 13);
             this.label6.TabIndex = 12;
             this.label6.Text = "En atencion:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // lblLlamado
             // 
@@ -176,15 +183,6 @@
             this.lblLlamado.Size = new System.Drawing.Size(10, 13);
             this.lblLlamado.TabIndex = 13;
             this.lblLlamado.Text = "-";
-            this.lblLlamado.Click += new System.EventHandler(this.lblLlamado_Click);
-            // 
-            // dtpFecha
-            // 
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(460, 36);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(91, 20);
-            this.dtpFecha.TabIndex = 10;
             // 
             // frmTramitesGenerales
             // 

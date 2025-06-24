@@ -9,18 +9,28 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using IEFI_GestionTramites.Forms;
 using IEFI_GestionTramites.Models;
+using IEFI_GestionTramites.Repositories;
 
 namespace IEFI_GestionTramites
 {
     public partial class frmPrincipal : Form
     {
+
+        private ColaTramites cola;
+        private PilaUrgencias pila;
+        private ListaFinalizados historial;
         public frmPrincipal()
         {
             InitializeComponent();
+
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
+            cola = JornadaRepository.CargarCola();
+            pila = JornadaRepository.CargarPila();
+            historial = JornadaRepository.CargarHistorial();
+
             CargarTramitesGenerales();
             CargarUrgencias();
             CargarHistorial();
@@ -28,7 +38,7 @@ namespace IEFI_GestionTramites
 
         private void CargarTramitesGenerales()
         {
-            frmTramitesGenerales frm = new frmTramitesGenerales();
+            frmTramitesGenerales frm = new frmTramitesGenerales(cola, historial);
             frm.TopLevel = false;
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.Dock = DockStyle.Fill;
@@ -38,9 +48,10 @@ namespace IEFI_GestionTramites
             frm.Show();
         }
 
+
         private void CargarUrgencias()
         {
-            frmUrgencias frm = new frmUrgencias();
+            frmUrgencias frm = new frmUrgencias(pila, historial);
             frm.TopLevel = false;
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.Dock = DockStyle.Fill;
@@ -51,9 +62,10 @@ namespace IEFI_GestionTramites
         }
 
 
+
         private void CargarHistorial()
         {
-            frmHistorial frm = new frmHistorial(DatosCompartidos.Historial);
+            frmHistorial frm = new frmHistorial(historial);
             frm.TopLevel = false;
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.Dock = DockStyle.Fill;
@@ -63,5 +75,30 @@ namespace IEFI_GestionTramites
             frm.Show();
         }
 
+
+        private void btnAbrirJornada_Click(object sender, EventArgs e)
+        {
+            cola = JornadaRepository.CargarCola();
+            pila = JornadaRepository.CargarPila();
+            historial = JornadaRepository.CargarHistorial();
+
+            CargarTramitesGenerales();
+            CargarUrgencias();
+            CargarHistorial();
+
+            MessageBox.Show("Jornada cargada correctamente.");
+        }
+
+        private void btnCerrarJornada_Click(object sender, EventArgs e)
+        {
+
+            frmTramitesGenerales frm = new frmTramitesGenerales(cola, historial);
+
+            JornadaRepository.GuardarCola(cola);
+            JornadaRepository.GuardarPila(pila);
+            JornadaRepository.GuardarHistorial(historial);
+
+            MessageBox.Show("Jornada guardada correctamente.");
+        }
     }
 }
